@@ -1,0 +1,16 @@
+button {
+    height: 50px;
+    width: 80px;
+    color: azure;
+    box-shadow: 3px 3px 5px 2px #000000;
+    background: linear-gradient(to right, rgba(27, 4, 4, .75),rgba(0, 206, 233, 0.75));
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-self: center;
+}
+body {
+    display: flex;
+    height: 100dvh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
