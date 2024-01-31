@@ -1,0 +1,58 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+thead th:nth-child(1) {
+    width: 30%;
+}
+
+thead th:nth-child(2) {
+    width: 20%;
+} 
+
+thead th:nth-child(3) {
+    width: 10%;
+} 
+
+thead th:nth-child(4) {
+    width: 35%;
+} 
+th,
+td {
+    padding: 20px;
+}
+/* text align */
+thead  tr:nth-child(1){
+    text-align: left;
+}
+
+tbody tr th {
+    text-align: left;
+}
+
+tbody td {
+    text-align: left;
+}
+tbody td:nth-child(3){
+    text-align: right;
+}
+tbody td:nth-child(4){
+    text-align: left;
+}
+
+caption {
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+}
+tbody tr:nth-child(odd) {
+    background-color: rgba(226, 212, 212, .75);
+}
+
+tfoot {
+    border-top: 2px solid grey;
+    border-bottom: solid 2px grey;
+}
