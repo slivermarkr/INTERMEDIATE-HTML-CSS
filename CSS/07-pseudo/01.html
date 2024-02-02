@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .emojify::before {
+            content: '😎 🥸 🤓';
+        }
+        .emojify::after {
+            content:'🤓 🥸 😎'
+        }
+        .box::before {
+            content: "";
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            background-color: rebeccapurple;
+            box-shadow: inset rgba(255, 255, 255, 0.75) 2px 2px 3px 4px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Let's <span class="emojify">emojify</span>this span!</div>
+</body>
+</html>
