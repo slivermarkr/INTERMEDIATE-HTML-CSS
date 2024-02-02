@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main > div {
+            border: 3px solid black;
+            width: 3rem;
+            height: 3rem;
+            margin: 3rem;
+        }
+        main > div > div {
+            border: 3px solid orangered;
+            width: 2rem;
+            height: 2rem;
+            margin: 3rem;
+        }
+        .group1 + div {
+            border-radius: 10px;
+            
+        }
+        .group1 + div + div {
+            box-shadow: rgba(0, 0, 0, .8) 3px 3px 3px 3px,
+            inset rgb(209, 81, 38) 2px 2px 2px 4px;
+        }
+        .group1 ~ div:hover {
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <main class="parent">
+        <div class="child group1">
+            <div class="grand-child group1"></div>
+        </div>
+        <div class="child group2">
+            <div class="grand-child group2"></div>
+        </div>
+        <div class="child group3">
+            <div class="grand-child group3"></div>
+        </div>
+    </main>
+</body>
+</html>
