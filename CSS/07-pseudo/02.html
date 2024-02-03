@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: blue
+        }
+        a[href^="#"] {
+            background-color: gold;
+        }
+        a[href*="insensitive" i] {
+            color: cyan;
+        }
+        a[href*="cAsE" s] {
+            color:pink;
+        }
+        a[href$=".org"] {
+            color: red;
+        }
+        a[href^="https://"][href$=".org"]{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#internal">Internal</a></li>
+        <li><a href="http://example.com">Example Link</a></li>
+        <li><a href="#InSensitive">Insensitive Internal</a></li>
+        <li><a href="http://example.org">Example org link</a></li>
+        <li><a href="https://example.org">Example https org</a></li>
+    </ul>
+</body>
+</html>
