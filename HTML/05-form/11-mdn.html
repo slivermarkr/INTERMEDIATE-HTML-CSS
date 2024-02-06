@@ -11,7 +11,7 @@
         <p>
             Required fields are followed by
             <strong><span aria-label="required">*</span></strong>
-            
+        </p>
             <section>
                 <h2>Contact Information</h2>
                 <fieldset>
@@ -61,9 +61,33 @@
                     </label>
                     <input type="text" id="pwd" name="password" required>
                 </p>
-
             </section>
-        </p>
+        
+            <section>
+                <h2>Payment Information</h2>
+                <p>
+                    <label for="card">
+                        <span>Card type:</span>
+                    </label>
+                    <select name="usercard" id="card">
+                        <option value="visa">Visa</option>
+                        <option value="mc">Mastercard</option>
+                        <option value="amex">American Express</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="expiration">
+                        <span>Expiration date:</span><strong><span aria-label="required">*</span></strong>
+                    </label>
+                    <input 
+                    type="text"
+                    id="expiration"
+                    name="expiration"
+                    required
+                    placeholder="MM/YY"
+                    pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"/>
+                </p>
+            </section>
     </form>
 </body>
 </html>
