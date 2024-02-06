@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <label for=""username>What's your name?</label>
+        <label for="username">What's your name?</label>
             <input type="text" id="username">
             <button class="greet-btn">Greet Me</button>
     </div>
@@ -18,7 +18,7 @@
         const greetMeButton = document.querySelector('.greet-btn');
         const greetingOutput = document.querySelector('.greeting');
 
-        greetMeButton.addEventListener('click', (event) => {
+        greetMeButton.addEventListener('click', () => {
             greetingOutput.textContent = `Hello ${name.value}`;
         });
     </script>
