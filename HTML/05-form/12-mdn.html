@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      form {
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+      }
+      label {
+        width: 250px;
+      }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <ul>
+                <li>
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name">
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <label for="pwd">Password:</label>
+                        <input type="password" id="pwd" name="user_password">
+                    </p>
+                </li>
+            </ul>
+            
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
