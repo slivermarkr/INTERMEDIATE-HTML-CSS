@@ -72,6 +72,26 @@
             width: 60%;
             margin: 0 auto;
         }
+
+        input + span::before {
+            position: absolute;
+            right: -20px;
+            top: 5px;
+        }
+
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        input:invalid + span::before {
+            content: "✖";
+            color: red;
+        }
+
+        input:valid + span::before {
+            content: "✓";
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +116,7 @@
                     Email address (include if you want a response):
                 </label>
                 <input type="email" name="email" id="email">
+                <span></span>
             </div>
 
             <div>
