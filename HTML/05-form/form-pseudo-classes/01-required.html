@@ -92,6 +92,14 @@
             content: "✓";
             color: green;
         }
+
+        input:out-of-range + span::after {
+            color: white;
+            background-color: red;
+            width: 155px;
+            content: "Outside allowable value range";
+            left: -182px;
+        }
     </style>
 </head>
 <body>
@@ -106,8 +114,8 @@
             </div>
 
             <div>
-                <label for="lname">Last name:</label>
-                <input type="text" id="lname" name="lname" required>
+                <label for="age">Age(+12):</label>
+                <input type="number" id="age" name="age" required min="12" max="120">
                 <span></span>
             </div>
 
