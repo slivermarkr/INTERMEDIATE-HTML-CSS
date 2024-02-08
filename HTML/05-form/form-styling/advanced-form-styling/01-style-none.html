@@ -1,39 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Advanced styling: Task 1</title>
     <style>
-        input {
-            appearance: none
-        }
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button,
+      input,
+      select {
+        width: 150px;
+        height: 25px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      input[type='search'] {
+        display: block;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 5px;
+        border: 2px solid grey;
+        position: relative;
+      }
+
+
+      input:focus,
+      input:hover {
+        background-color: rgba(0 ,0 ,0, .1);
+        cursor: pointer;
+      }
+      input + div {
+        position: relative;
+      }
+      form {
+        position: relative;
+      }
+
+      input + div::before {
+        content: url(../../../../../../Downloads/search-24px.png);
+        position: absolute;
+        left: 155px;
+        bottom: -6px;
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <form>
-        <p>
-            <label for="search">Search:</label>
-            <input type="search" id="search">
-        </p>
-        <p>
-            <label for="text">Text:</label>
-            <input type="text" id="text">
-        </p>
-        <p>
-            <label for="date">Date:</label>
-            <input type="date" id="date">
-        </p>
-        <p>
-            <label for="radio">Radio: </label>
-            <input type="radio" id="radio" name="radio">
-        </p>
-        <p>
-            <label for="checkbox">Checkbox: </label>
-            <input type="checkbox" id="checkbox" name="checkbox">
-        </p>
-        <p><input type="submit" value="submit"></p>
-        <p><input type="button" value="button"></p>
+      <input type="search" name="search" id="search" aria-label="Search our site">
+      <div></div>
     </form>
-</body>
+  </body>
+
 </html>
