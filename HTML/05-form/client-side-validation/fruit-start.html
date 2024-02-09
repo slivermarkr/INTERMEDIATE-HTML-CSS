@@ -20,10 +20,18 @@
 
 <body>
     <form>
-      <label for="choose">Would you prefer a banana or a cherry?</label>
-      <input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry">
+      <label for="choose">Would you prefer a boobs or butt ?</label>
+      <input id="choose" name="i_like" required pattern="[Bb]oobs|[Bb]utt">
       <button>Submit</button>
     </form>
+    <script>
+        window.addEventListener('submit', () => {
+            const text = document.querySelector('input');
+           if(text.value.toLowerCase() === "butt"){
+            alert("I see, you're a man of culture as well")} else {
+            alert("Boobs are great too!")}
+        })
+    </script>
 </body>
 
 </html>
