@@ -30,9 +30,19 @@
         outline:none;
       }
       .error {
-        background-color: red;
+        background-color:#900;
         color: white;
-        font-size: 90%;
+        font-size: 80%;
+        width: 100%;
+        padding: 0;
+
+        border-radius: 0 0 5px 5px;
+        box-sizing: border-box;
+
+      }
+
+      .error.active {
+        padding: 0.3em
       }
     </style>
   </head>
@@ -44,6 +54,7 @@
         <li>
           <label for="uname">User name:</label>
           <input type="text" name="uname" id="uname" required minlength="10">
+          <span class="error"></span>
         </li>
         <li>
           <label for="email">Email address:</label>
@@ -51,9 +62,9 @@
           <span class="error"></span>
         </li>
         <li>
-          <label for="phone">Phone number:</label>
-          <input type="text" name="phone" id="phone" required minlength="10">
-          <span></span>
+            <label for="phone">Phone number:</label>
+            <input type="tel" name="phone" id="phone" required minlength="10">
+            <span class="error"></span>
         </li>
         <li>
           <label for="comment">Comment:</label>
@@ -68,24 +79,61 @@
     </form>
     <script>
         const form = document.querySelector('.form');
-        const email = document.querySelector('#email');
         const errorMsg = document.querySelector('#email + span.error');
+        const inputs = document.querySelectorAll('input');
 
-        email.addEventListener('input', (event) => {
-            if(email.validity.valid) {
-                errorMsg.textContent = "";
-                emailError.className = "error"
+
+        inputs.forEach(input => {
+            input.addEventListener('input', (event) => {
+            const spanElement = input.nextElementSibling;
+            const errorMsg = input.nextElementSibling.textContent;
+            if(input.validity.valid) {
+            errorMsg = "";
+            spanElement.className = "error"
             } else {
-                showError();
-            }
+                showError(input);
+            }                
+            })
+        })
+        form.addEventListener('submit',(event) => {
+            inputs.forEach(input => {
+                if(!input.validity.valid) {
+                    showError();
+                    event.preventDefault();
+                }
+            })
         })
 
-        form.addEventListener('submit',(event) => {
-            if(!email.validity.valid) {
-                showError();
-                event.preventDefault();
+
+        function showError(input) {
+            let span = input.nextElementSibling;
+            let errorMessage = input.nextElementSibling.textContent;
+            switch(input.id){
+                case "uname": 
+                    if(input.validity.tooShort)
+                    {
+                        errorMessage = `Username must be ${input.minLength} characters; you entered  ${input.value.length}.`;
+                    };
+                break;
+                case "email": 
+                    if(input.validity.tooShort) {
+                        errorMessage = `Email must be ${input.minLength} characters; you entered  ${input.value.length}.`;
+                    }else if (input.validity.typeMismatch) {
+                        errorMessage = "Entered value must a valid email address";
+                    } else if (input.value.valueMissing) {
+                        errorMessage = "You need to enter an email address."
+                    }
+                break;
+                case "phone":        
+                    
+                if(input.validity.tooShort)
+                    {
+                        errorMessage = `Phone must be ${input.minLength} digits; you entered  ${input.value.length}.`;
+                    };
+                break;
             }
-        })
+            span.className = "erorr active";
+        }
     </script>
   </body>
 
