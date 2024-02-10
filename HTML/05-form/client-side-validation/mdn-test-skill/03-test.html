@@ -29,29 +29,36 @@
       input:focus {
         outline:none;
       }
+      .error {
+        background-color: red;
+        color: white;
+        font-size: 90%;
+      }
     </style>
   </head>
 
   <body>
-    <form>
+    <form class="form">
       <h2>Enter your support query</h2>
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input type="text" name="uname" id="uname" title="A single letter and 3 or more characters between a period " required pattern="[a-z]\.[a-z0-9]{3,}">
+          <input type="text" name="uname" id="uname" required minlength="10">
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input type="text" name="email" title="any letter followed by '@bigcorp.eu'" id="email" required pattern="[a-zA-Z0-9]+@bigcorp\.eu">
+          <input type="email" name="email" id="email" required minlength="10">
+          <span class="error"></span>
         </li>
         <li>
-          <label for="tel">Phone number:</label>
-          <input type="tel" name="phone" title="10 numbers in a row" id="phone" required pattern="
-          ^([\d]{3})[-\. ]?[\d]{3}[-\. ]?[\d]{4}$">
+          <label for="phone">Phone number:</label>
+          <input type="text" name="phone" id="phone" required minlength="10">
+          <span></span>
         </li>
         <li>
           <label for="comment">Comment:</label>
           <textarea name="comment" id="comment" required>
+            
           </textarea>
         </li>
         <li>
@@ -59,6 +66,27 @@
         </li>
       </ul>
     </form>
+    <script>
+        const form = document.querySelector('.form');
+        const email = document.querySelector('#email');
+        const errorMsg = document.querySelector('#email + span.error');
+
+        email.addEventListener('input', (event) => {
+            if(email.validity.valid) {
+                errorMsg.textContent = "";
+                emailError.className = "error"
+            } else {
+                showError();
+            }
+        })
+
+        form.addEventListener('submit',(event) => {
+            if(!email.validity.valid) {
+                showError();
+                event.preventDefault();
+            }
+        })
+    </script>
   </body>
 
 </html>
