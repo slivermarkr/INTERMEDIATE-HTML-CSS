@@ -42,7 +42,8 @@
 
       .error.active {
         padding: 0.3em
-      }
+       } 
+
     </style>
   </head>
 
@@ -100,7 +101,7 @@
                     let errorMsg = input.nextElementSibling.textContent;
                     showError(input,spanElement,errorMsg);
                     event.preventDefault();
-                }
+                } 
             })
         })
 
@@ -111,27 +112,35 @@
                 case "uname": 
                     if(input.validity.tooShort)
                     {
-                        spanElement.innerHTML = `Username must be ${input.minLength} characters long; you entered  ${input.value.length}.`;
+                        spanElement.innerHTML = `Username must be ${input.minLength} characters long; you entered  ${input.value.length} char.`;spanElement.className = "error active";
                     };
                     break;
                 case "email": 
                     if(input.validity.tooShort) {
-                        spanElement.innerHTML = `Email must be ${input.minLength} characters long; you entered  ${input.value.length}.`;
+                        spanElement.innerHTML = `Email must be ${input.minLength} characters long; you entered  ${input.value.length} char.`;
+                        spanElement.className = "error active";
                     }else if (input.validity.typeMismatch) {
                         spanElement.innerHTML = "Entered value must a valid email address";
+
+                        spanElement.className = "error active";
                     } else if (input.value.valueMissing) {
                         spanElement.innerHTML = "You need to enter an email address."
+
+                        spanElement.className = "error active";
                     }
                 break;
                 case "phone":        
                     
                 if(input.validity.tooShort)
                     {
-                        spanElement.innerHTML = `Phone must be ${input.minLength} digits long; you entered  ${input.value.length}.`;
+                        spanElement.innerHTML = `Phone must be ${input.minLength} digits long; you entered  ${input.value.length} char.`;
+
+                        spanElement.className = "error active";
                     };
+            
                 break;
                 }
-                spanElement.className = "error active";
+        
         }
     </script>
   </body>
