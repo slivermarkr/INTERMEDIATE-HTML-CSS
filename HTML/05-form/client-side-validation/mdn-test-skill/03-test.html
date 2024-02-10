@@ -38,7 +38,6 @@
 
         border-radius: 0 0 5px 5px;
         box-sizing: border-box;
-
       }
 
       .error.active {
@@ -48,7 +47,7 @@
   </head>
 
   <body>
-    <form class="form">
+    <form class="form" novalidate>
       <h2>Enter your support query</h2>
       <ul>
         <li>
@@ -79,7 +78,6 @@
     </form>
     <script>
         const form = document.querySelector('.form');
-        const errorMsg = document.querySelector('#email + span.error');
         const inputs = document.querySelectorAll('input');
 
 
@@ -88,12 +86,12 @@
             const spanElement = input.nextElementSibling;
             const errorMsg = input.nextElementSibling.textContent;
             if(input.validity.valid) {
-            errorMsg = "";
+            spanElement = "";
             spanElement.className = "error"
             } else {
                 showError(input);
             }                
-            })
+            })   
         })
         form.addEventListener('submit',(event) => {
             inputs.forEach(input => {
@@ -106,18 +104,18 @@
 
 
         function showError(input) {
-            let span = input.nextElementSibling;
+            spanElement.textContent
             let errorMessage = input.nextElementSibling.textContent;
             switch(input.id){
                 case "uname": 
                     if(input.validity.tooShort)
                     {
-                        errorMessage = `Username must be ${input.minLength} characters; you entered  ${input.value.length}.`;
+                        errorMessage = `Username must be ${input.minLength} characters long; you entered  ${input.value.length}.`;
                     };
                 break;
                 case "email": 
                     if(input.validity.tooShort) {
-                        errorMessage = `Email must be ${input.minLength} characters; you entered  ${input.value.length}.`;
+                        errorMessage = `Email must be ${input.minLength} characters long; you entered  ${input.value.length}.`;
                     }else if (input.validity.typeMismatch) {
                         errorMessage = "Entered value must a valid email address";
                     } else if (input.value.valueMissing) {
@@ -128,11 +126,12 @@
                     
                 if(input.validity.tooShort)
                     {
-                        errorMessage = `Phone must be ${input.minLength} digits; you entered  ${input.value.length}.`;
+                        errorMessage = `Phone must be ${input.minLength} digits long; you entered  ${input.value.length}.`;
                     };
                 break;
+
             }
-            span.className = "erorr active";
+            span.className = "error active";
         }
     </script>
   </body>
