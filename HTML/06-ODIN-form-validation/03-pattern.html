@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="zip-code">Enter Postal/Zip Code:</label>
+            <input 
+            type="text"
+            id="zip-code"
+            required
+            pattern="(\d{5}([\-]\d{4})?)"
+            placeholder="65250"
+            title="Please enter a valid zip code, example: 65250">
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
