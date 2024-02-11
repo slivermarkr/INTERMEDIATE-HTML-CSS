@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+            border-radius: 5px ;
+            border: 2px solid #000;
+            padding: 5px ;
+            margin-bottom: 15px;
+        }
+        input:invalid {
+            border: 3px solid red;
+        }
+        input:valid {
+            border: 3px solid green;
+        }
+        input:focus {
+            outline:none;
+        }
+    </style>
 </head>
 <body>
     <form action="">
         <div>
             <label for="email">Email:</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" >
         </div>
         <div>
             <label for="website">Website:</label>
-            <input type="url" id="website" required>
+            <input type="url" id="website" >
         </div>
         <div>
             <button type="submit">Submit</button>
