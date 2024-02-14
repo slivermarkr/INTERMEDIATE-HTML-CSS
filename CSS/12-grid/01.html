@@ -7,8 +7,10 @@
     <style>
         .grid-container {
             display:grid;
-            grid-template: 75px 75px / 75px 75px 75px 75px;
-            gap:  32px;
+            grid-template: 75px 75px / 150px 75px 75px 75px;
+            column-gap:  32px;
+            row-gap: 45px;
+            grid-auto-rows: 75px;
 
         }
         .card {
@@ -21,12 +23,14 @@
     <div class="grid-container">
         <div class="card">Item 1</div>
         <div class="card">Item 2
-            <p>I am not a grid item!</p>
         </div>
         <div class="card">Item 3</div>
         <div class="card">Item 4</div>
         <div class="card">Item 5</div>
         <div class="card">Item 6</div>
+        <div class="card">Item 7</div>
+        <div class="card">Item 8</div>
+        <div class="card">Item 9</div>
     </div>
 </body>
 </html>
