@@ -7,11 +7,9 @@
     <style>
         .grid-container {
             display:grid;
-            grid-template-columns:
-            75px 75px 75px;
-            grid-template-rows:
-            75px 75px;
+            grid-template: 75px 75px / 75px 75px 75px 75px;
             gap:  32px;
+
         }
         .card {
             background-color: peachpuff;
@@ -21,12 +19,14 @@
 </head>
 <body>
     <div class="grid-container">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">Item 1</div>
+        <div class="card">Item 2
+            <p>I am not a grid item!</p>
+        </div>
+        <div class="card">Item 3</div>
+        <div class="card">Item 4</div>
+        <div class="card">Item 5</div>
+        <div class="card">Item 6</div>
     </div>
 </body>
 </html>
