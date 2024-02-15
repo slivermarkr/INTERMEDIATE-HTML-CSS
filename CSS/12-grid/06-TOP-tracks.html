@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=k, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+        }
+        .item {
+            border: solid 1px black;
+            background-color: bisque;
+            text-align: center;
+        }
+        .first-row {
+            background-color: pink;
+        }
+        .last-column {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item first-row">1</div>
+        <div class="item first-row">2</div>
+        <div class="item first-row last-column">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item last-column">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item last-column">9</div>
+    </div>
+</body>
+</html>
