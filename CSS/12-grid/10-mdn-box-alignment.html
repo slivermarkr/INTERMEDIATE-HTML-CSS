@@ -15,11 +15,9 @@
             "a a a a b b b b"
             "a a a a b b b b"
             "c c c c d d d d"
-            "c c c c d d d d ";
+            "c c c c d d d d";
             border: 2px solid orangered;
             border-radius: 5px;
-            align-items: start;
-
         }
         .wrapper > div {
             border: 2px solid red;
@@ -33,12 +31,15 @@
         }
         .item2 {
             grid-area: b;
+            justify-self: start;
         }
         .item3 {
             grid-area: c;
+            justify-self: end;
         }
         .item4{
             grid-area: d;
+            justify-self: center;
         }
     </style>
 </head>
