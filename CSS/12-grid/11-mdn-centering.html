@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+
+            grid-auto-rows:200px;
+            grid-template-areas:
+            ". a a ."
+            ". a a ."
+            ;
+            border: 2px solid orangered;
+            border-radius: 5px;
+        }
+        .wrapper > div {
+            border: 2px solid red;
+            border-radius: 5px;
+            background-color: rgb(255, 228, 178);
+            padding: 1em;
+        }
+
+        .item1 {
+            grid-area: a;
+            place-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item1">Item 1</div>
+    </div>
+</body>
+</html>
