@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+
+
+            border-radius: 5px;
+            border: 3px solid red;
+        }
+        .container > div {
+            border: 3px solid rgb(255, 146, 146);
+            background-color: rgb(253, 240, 216);
+            border-radius: 5px;
+        }
+        .nested {
+            border: 1px solid rgb(241, 241, 57);
+            background-color: rgb(255, 255, 207);
+            padding: 10px;
+        }
+        .box1 {
+            grid-column: 1 / 4;
+            padding: 10px;
+
+            display: contents;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <div class="nested">a</div>
+            <div class="nested">b</div>
+            <div class="nested">c</div>
+        </div>
+        <div class="box box2">Two</div>
+        <div class="box box3">Three</div>
+        <div class="box box4">Four</div>
+        <div class="box box5">Five</div>
+    </div>
+</body>
+</html>
